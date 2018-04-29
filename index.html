@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/IDQ_TOTAL_0.js"></script>
+        <script src="data/HCLL_TOTAL_1.js"></script>
+        <script src="data/GVLL_TOTAL_2.js"></script>
+        <script src="data/GTRO_TOTAL_3.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        })
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+            if (bounds_group.getLayers().length) {
+                map.fitBounds(bounds_group.getBounds());
+            }
+        }
+        function pop_IDQ_TOTAL_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CNMBR</strong><br />' + (feature.properties['MPIO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['MPIO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CCNCT</strong><br />' + (feature.properties['MPIO_CCNCT'] !== null ? Autolinker.link(String(feature.properties['MPIO_CCNCT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>DPTO_CNMBR</strong><br />' + (feature.properties['DPTO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['DPTO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>FECHA</strong><br />' + (feature.properties['FECHA'] !== null ? Autolinker.link(String(feature.properties['FECHA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>TIPO_EVE</strong><br />' + (feature.properties['TIPO_EVE'] !== null ? Autolinker.link(String(feature.properties['TIPO_EVE'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_IDQ_TOTAL_0_0() {
+            return {
+                pane: 'pane_IDQ_TOTAL_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(29,25,136,1.0)',
+            }
+        }
+        map.createPane('pane_IDQ_TOTAL_0');
+        map.getPane('pane_IDQ_TOTAL_0').style.zIndex = 400;
+        map.getPane('pane_IDQ_TOTAL_0').style['mix-blend-mode'] = 'normal';
+        var layer_IDQ_TOTAL_0 = new L.geoJson(json_IDQ_TOTAL_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_IDQ_TOTAL_0',
+            onEachFeature: pop_IDQ_TOTAL_0,
+            style: style_IDQ_TOTAL_0_0,
+        });
+        bounds_group.addLayer(layer_IDQ_TOTAL_0);
+        map.addLayer(layer_IDQ_TOTAL_0);
+        function pop_HCLL_TOTAL_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CNMBR</strong><br />' + (feature.properties['MPIO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['MPIO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CCNCT</strong><br />' + (feature.properties['MPIO_CCNCT'] !== null ? Autolinker.link(String(feature.properties['MPIO_CCNCT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>DPTO_CNMBR</strong><br />' + (feature.properties['DPTO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['DPTO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>FECHA</strong><br />' + (feature.properties['FECHA'] !== null ? Autolinker.link(String(feature.properties['FECHA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>TIPO_EVE</strong><br />' + (feature.properties['TIPO_EVE'] !== null ? Autolinker.link(String(feature.properties['TIPO_EVE'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_HCLL_TOTAL_1_0() {
+            return {
+                pane: 'pane_HCLL_TOTAL_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(234,27,12,1.0)',
+            }
+        }
+        map.createPane('pane_HCLL_TOTAL_1');
+        map.getPane('pane_HCLL_TOTAL_1').style.zIndex = 401;
+        map.getPane('pane_HCLL_TOTAL_1').style['mix-blend-mode'] = 'normal';
+        var layer_HCLL_TOTAL_1 = new L.geoJson(json_HCLL_TOTAL_1, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_HCLL_TOTAL_1',
+            onEachFeature: pop_HCLL_TOTAL_1,
+            style: style_HCLL_TOTAL_1_0,
+        });
+        bounds_group.addLayer(layer_HCLL_TOTAL_1);
+        map.addLayer(layer_HCLL_TOTAL_1);
+        function pop_GVLL_TOTAL_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CNMBR</strong><br />' + (feature.properties['MPIO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['MPIO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CCNCT</strong><br />' + (feature.properties['MPIO_CCNCT'] !== null ? Autolinker.link(String(feature.properties['MPIO_CCNCT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>DPTO_CNMBR</strong><br />' + (feature.properties['DPTO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['DPTO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>FECHA</strong><br />' + (feature.properties['FECHA'] !== null ? Autolinker.link(String(feature.properties['FECHA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>TIPO_EVE</strong><br />' + (feature.properties['TIPO_EVE'] !== null ? Autolinker.link(String(feature.properties['TIPO_EVE'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GVLL_TOTAL_2_0() {
+            return {
+                pane: 'pane_GVLL_TOTAL_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,127,0,1.0)',
+            }
+        }
+        map.createPane('pane_GVLL_TOTAL_2');
+        map.getPane('pane_GVLL_TOTAL_2').style.zIndex = 402;
+        map.getPane('pane_GVLL_TOTAL_2').style['mix-blend-mode'] = 'normal';
+        var layer_GVLL_TOTAL_2 = new L.geoJson(json_GVLL_TOTAL_2, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_GVLL_TOTAL_2',
+            onEachFeature: pop_GVLL_TOTAL_2,
+            style: style_GVLL_TOTAL_2_0,
+        });
+        bounds_group.addLayer(layer_GVLL_TOTAL_2);
+        map.addLayer(layer_GVLL_TOTAL_2);
+        function pop_GTRO_TOTAL_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CNMBR</strong><br />' + (feature.properties['MPIO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['MPIO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>MPIO_CCNCT</strong><br />' + (feature.properties['MPIO_CCNCT'] !== null ? Autolinker.link(String(feature.properties['MPIO_CCNCT'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>DPTO_CNMBR</strong><br />' + (feature.properties['DPTO_CNMBR'] !== null ? Autolinker.link(String(feature.properties['DPTO_CNMBR'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>FECHA</strong><br />' + (feature.properties['FECHA'] !== null ? Autolinker.link(String(feature.properties['FECHA'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>TIPO_EVE</strong><br />' + (feature.properties['TIPO_EVE'] !== null ? Autolinker.link(String(feature.properties['TIPO_EVE'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GTRO_TOTAL_3_0() {
+            return {
+                pane: 'pane_GTRO_TOTAL_3',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(246,234,20,1.0)',
+            }
+        }
+        map.createPane('pane_GTRO_TOTAL_3');
+        map.getPane('pane_GTRO_TOTAL_3').style.zIndex = 403;
+        map.getPane('pane_GTRO_TOTAL_3').style['mix-blend-mode'] = 'normal';
+        var layer_GTRO_TOTAL_3 = new L.geoJson(json_GTRO_TOTAL_3, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_GTRO_TOTAL_3',
+            onEachFeature: pop_GTRO_TOTAL_3,
+            style: style_GTRO_TOTAL_3_0,
+        });
+        bounds_group.addLayer(layer_GTRO_TOTAL_3);
+        map.addLayer(layer_GTRO_TOTAL_3);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/GTRO_TOTAL_3.png" /> GTRO_TOTAL': layer_GTRO_TOTAL_3,'<img src="legend/GVLL_TOTAL_2.png" /> GVLL_TOTAL': layer_GVLL_TOTAL_2,'<img src="legend/HCLL_TOTAL_1.png" /> HCLL_TOTAL': layer_HCLL_TOTAL_1,'<img src="legend/IDQ_TOTAL_0.png" /> IDQ_TOTAL': layer_IDQ_TOTAL_0,}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
